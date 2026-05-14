@@ -28,6 +28,16 @@ export const createPopularSection = (data: object) => axiosInstance.post('/admin
 export const updatePopularSection = (id: number, data: object) => axiosInstance.put(`/admin/popular-sections/${id}`, data).then(r => r.data);
 export const deletePopularSection = (id: number) => axiosInstance.delete(`/admin/popular-sections/${id}`).then(r => r.data);
 
+// ─── Happy Customers ─────────────────────────────────────────────────────────
+export const getHappyCustomerAvatars = () => axiosInstance.get('/admin/happy-customers/avatars').then(r => r.data);
+export const createHappyCustomerAvatar = (data: FormData) => axiosInstance.post('/admin/happy-customers/avatars', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(r => r.data);
+export const deleteHappyCustomerAvatar = (id: number) => axiosInstance.delete(`/admin/happy-customers/avatars/${id}`).then(r => r.data);
+
+export const getHappyCustomerTestimonials = () => axiosInstance.get('/admin/happy-customers/testimonials').then(r => r.data);
+export const createHappyCustomerTestimonial = (data: object) => axiosInstance.post('/admin/happy-customers/testimonials', data).then(r => r.data);
+export const updateHappyCustomerTestimonial = (id: number, data: object) => axiosInstance.put(`/admin/happy-customers/testimonials/${id}`, data).then(r => r.data);
+export const deleteHappyCustomerTestimonial = (id: number) => axiosInstance.delete(`/admin/happy-customers/testimonials/${id}`).then(r => r.data);
+
 // ─── Showcase Tea Tags ────────────────────────────────────────────────────────
 export const getShowcaseTeaTags = () => axiosInstance.get('/admin/showcase-tea/tags').then(r => r.data);
 export const createShowcaseTeaTag = (data: object) => axiosInstance.post('/admin/showcase-tea/tags', data).then(r => r.data);
